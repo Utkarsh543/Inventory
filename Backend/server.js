@@ -30,7 +30,6 @@ app.use("/api/sales", salesRoute);
 let userAuthCheck;
 app.post("/api/login", async (req, res) => {
   console.log(req.body);
-  // res.send("hi");
   try {
     const user = await User.findOne({
       email: req.body.email,
@@ -54,9 +53,7 @@ app.post("/api/login", async (req, res) => {
 app.get("/api/login", (req, res) => {
   res.send(userAuthCheck);
 });
-// ------------------------------------
 
-// Registration API
 app.post("/api/register", (req, res) => {
   let registerUser = new User({
     firstName: req.body.firstName,
