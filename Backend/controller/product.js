@@ -27,8 +27,9 @@ const addProduct = (req, res) => {
 const getAllProducts = async (req, res) => {
   const findAllProducts = await Product.find({
     userID: req.params.userId,
-  }).sort({ _id: -1 }); // -1 for descending;
+  }).sort({ _id: -1 }); 
   res.json(findAllProducts);
+  console.log(findAllProducts);
 };
 
 // Delete Selected Product
